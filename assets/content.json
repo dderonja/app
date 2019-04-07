@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "content": "Der Marktplatz war voller Menschen. Vor allem vor den Ständen drängelten sich die Leute, um schnellstmöglich dran zu kommen. “Es gibt nichts Besseres als überfüllte Platze”, schießt es dir in den Kopf während du dir ein kleines Grinsen nicht verkneifen kannst, trotz der bedrohlichen Situation. Auch wenn du die meisten Menschen nicht ausstehen kannst und der Geruch von ungeduschten Leuten hier unausstehlich ist, kannst du hier mit Leichtigkeit Waren und Geldbörsen erbeuten oder nach einem misslungenen Versuch fliehen. Letzteres war jetzt von Nöten.",
+    "decision": [
+      {
+        "id": 1.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "content": "Normalerweise musst du nur vor gewöhnlichen Bürgern entfliehen was ein Kinderspiel für dich ist. Sie bewegen sich nur auf den Hauptstraßen und wagen es nicht die dunklen und gesetzeslosen Seitengassen zu betreten. Dein Leben auf der Straße oder besser gesagt auf den Dächern der Stadt hat dir auch eine passable Akrobatik und Ausdauer gelernt. Gerade sind dir aber eine Hand voll bewaffneter Wachen auf den Fersen. Diesmal war das Risiko höher, aber das war es dir wert.",
+    "decision": [
+      {
+        "id": 2.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "content": "Es kommt nicht oft vor, dass ein Adliger durch das Armenviertel mit drei gelangweilt wirkenden Wachen schreitet.  Deine letzte warme Mahlzeit ist schon Wochen her, somit fiel die Entscheidung und du hast den Hauptgewinn angestrebt. Ein recht großer Beutel hing an seiner Hüfte, aus dem ein Stück Pergament heraus schielte.  An den Mann heran zu kommen war ein leichtes, das Entkommen gestaltet sich aber schwieriger als angenommen.",
+    "decision": [
+      {
+        "id": 3.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 4
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "content": "Die Wachen nahmen sofort die Verfolgung auf. Sie tragen nur leichte Rüstung, dadurch gelang es ihnen mit dir Schritt zu halten. Auch ihre Ausdauer scheint noch nicht nachzulassen. Du musst sie anders abschütteln und dafür müssen jetzt die Geschäfte oder Passanten herhalten. Du begibst dich in die Menschenmenge und kurzzeitig bist du für die Wachen verschwunden. Nun gilt es zu handeln. Du kannst dich in der Masse der Menschen, die sich um die einzelnen Stände bildet, verstecken oder in eins der Geschäfte fliehen, die um den Marktplatz herum erbaut wurden. Um den Ständen rangt sich eher das einfache Volk und feilscht lautstark um den Preis, während in den Geschäften eher ausgelesene Ware gehandelt wird. Dort ist weniger Kundschaft zum Untertauchen, dafür werden die Wachen euch dort eher nicht vermuten.",
+    "decision": [
+      {
+        "id": 4.1,
+        "option_text": "In der Masse untertauchen",
+        "diaden": 3,
+        "moral": -2,
+        "leben": -30,
+        "target_id": 5
+      },
+      {
+        "id": 4.2,
+        "option_text": "In ein Geschäft fliehen",
+        "diaden": 2,
+        "moral": -1,
+        "leben": -50,
+        "target_id": 6
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "content": "Du drückst dich an den Menschen so schnell vorbei wie es geht, ohne sie über den Haufen zu rennen. Dabei versuchst du viele zufällige Richtungswechsel einzubauen, um die Verfolgung zusätzlich zu erschweren. Trotzdem nimmst du wahr, wie die Wachen dicht hinter dir ebenfalls schnell vorankommen. Sie bahnen sich gewaltsam einen geraden Weg durch die Passanten. Um in der Masse unter zu tauchen müsstest du dein Aussehen verändern. Ein zusätzliches Kleidungsstück dürfte schon reichen. Glücklicher weise ist der Stand mit den Stoffen und Kleidungsstücken am begehrtesten, vor allem bei den Frauen. Dies dürfte es dir zusätzlich erleichtern nicht aufzufallen. Sobald du ihn erreichst drängelst du dich so nah es geht an die Verkaufsfläche und beobachtest die Ware. Es dürfte sich als äußerst schwer erweisen Ware zu entwenden die gerade von 30 Frauen gleichzeitig bestaunt wird. In deiner Verzweiflung hast du dir das wohl etwas zu einfach vorgestellt. Das Klirren von Rüstungen kommt immer näher. Mehr Panik kommt in dir hoch und deine Augen fliegen schweifend über das Szenario vor dir. Dabei fällt dir ein Kopftuch auf, dass aber nicht auf der Verkaufsfläche, sondern in einem Korb einer potenziellen Kundin liegt. Als erprobte Taschendiebin ist es für dich ein leichtes sich nach vorne zu lehnen, dabei vermeintlich interessiert die ausgelegte Ware zu bestaunen und dabei das Tuch zu entwenden. In einer fließenden Bewegung ziehst du es an, drehst dich um und krümmst deine Statur etwas nach vorne. Mit einem neu aufgesetzten, entspannten Gang spazierst du vom Marktplatz fort.",
+    "decision": [
+      {
+        "id": 5.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 9
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "content": "Du stapfst entschlossenen Schrittes in Richtung eines Geschäfts. Dieses scheint Stoffe und Kleidung zu verkaufen. Auf dem Weg klopfst du den Staub von deiner Kleidung ab, um direkt fehl am Platz zu wirken. Dein Anblick ist sicher nicht der sauberste/beste nachdem du mehr als nur einmal auf den Dächern und den Gassen der Stadt übernachtet hast. Wenn du nur ein paar Minuten Zeit gewinnst dürfte das schon reichen, damit die Wachen woanders suchen gehen. Im Geschäft begrüßt dich eine ältere Dame mit einem freundlichen Lächeln. Du bist die einzige Kundin und die Verkäuferin spricht dich direkt auf dein Anliegen an. Mehr als ein paar gestammelte Worte, dass du gerne Stoffe kaufen möchtest kriegst du auf die Schnelle nicht hin. Im Gespräch wird der Verkäuferin klar, dass du keine Ahnung von Stoffen hast, noch von dem was du willst und wahrscheinlich nicht mal die Diaden hast etwas zu bezahlen. Gerade als ihr aufgesetztes Verkäuferlächeln einem genervten Ausdruck weicht, schmettert eine Wache die Tür auf. Rein instinktiv drehst du dich zu dem Knall um und erstarrst als euren Blick sich treffen. In deinem Kopf schwirren gerade alle Schimpfwörter, die du kennst, herum, mit denen du dein Glück verfluchst. Die Wachen blickt sich mehrere Sekunden an aber scheint dich nicht zu erkennen, da sie nur deinen Rücken gesehen haben. Eine Chance besteht also noch.",
+    "decision": [
+      {
+        "id": 6.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 7
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "content": "„Wie lange ist diese Frau schon hier?“ Nicht mal ein „Hallo“ von der Wache. Wie unverschämt. Dir ist selbst nicht klar wie du gerade so sarkastisch sein kannst. Vielleicht setzt schon Resignation zu deinem Schicksal ein.  Die Verkäuferin wirft dir einen vielsagenden Blick zu. Sie will Geld von dir sehen... Naja eine Wahl bleibt dir ja eh nicht. Mit deiner zuckersüßesten Stimme sagst du: „Oh ich überlege schon seit einer Ewigkeit welchen Stoff ich für mein neues Kleid verwenden soll. Gerade habe ich mich endlich entschieden und wollte es nur noch schnell bezahlen. „Stimmt das?“ Mit deinem strengen Blick zu der Verkäuferin. Sie zögert einen Moment aber stimmt dann doch energisch zu.",
+    "decision": [
+      {
+        "id": 7.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 8
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "content": "Sie zögert einen Moment aber stimmt dann doch energisch zu. Nachdem die Wache gegangen ist begebt ihr euch schweigend zum Tresen. Du weißt nicht was sich in dem Beutel befindet, denn du gestohlen hast und willst es ungern vor der Verkäuferin herausfinden. Du entscheidest dich stattdessen das letzte Schmuckstück was dir noch von deinem früheren Leben übrig blieb abzugeben. Es ist eine Brosche, die dir dein Mann geschenkt hat als ihr euren Hof bezogen habt. Dein Herz blutet als du das Schmuckstück auf den Tresen legst, aber das ist wahrscheinlich besser als deine Hände zu verlieren als Bestrafung für Diebstahl. Die Verkäuferin schaut mehr als enttäuscht und zieht den Stoff, den du scheinheilig ausgesucht hast zurück. Dir ist klar, dass sie diese Brosche als Schweigegeld annimmt, du aber nichts dafür im Gegenzug bekommst. Grummelnd gehst du vom Marktplatz fort. Von den Wachen fehlt jede Spur.",
+    "decision": [
+      {
+        "id": 8.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 9
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "content": "Du öffnest nun neugierig den Beutel und ignorierst erstmal das Schriftstück. Was dich hauptsächlich interessiert sind die hoffentlich zahlreichen Diaden in der Tasche. Zu deiner Enttäuschung befinden sich gerade mal 3 Diaden darin. Viel Geld für jemanden auf der Straße, für einen Adligen ein Witz. Dieser wusste wohl, dass er das Ziel von Überfällen sein wird und hat kaum was mitgenommen. Naja, es reicht für mehr als eine Mahlzeit, was erstmal das Wichtigste ist. Nun zum Pergament. Du entrollst es und liest in verschnörkelter Schrift, dass dies eine Einladung zu einem Ball ist. Zu solchen Events sind lediglich Adlige und besondere Gäste eingeladen. Du verstaust das Schriftstück auch wenn du gerade überhaupt keine Chance siehst dorthin zu kommen, aber man weiß ja nie ob es nicht noch mal nützlich sein kann.",
+    "decision": [
+      {
+        "id": 9.1,
+        "option_text": "Weiter",
+        "diaden": 0,
+        "moral": 0,
+        "leben": 0,
+        "target_id": 10
+      }
+    ]
+  }
+]
+
+
