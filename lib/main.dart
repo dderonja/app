@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:myapp/passage.dart';
 import 'package:myapp/decision.dart';
 import 'package:myapp/showAd.dart';
+import 'package:myapp/showLife.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -26,9 +28,11 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        dialogBackgroundColor: Colors.black,
+        fontFamily: 'Times New Roman',
         primarySwatch: Colors.blueGrey,
       ),
-      home: MyHomePage(title: 'Diebessaga'),
+      home: MyHomePage(title: 'Die Diebessaga'),
     );
   }
 }
@@ -82,18 +86,72 @@ class _MyHomePageState extends State<MyHomePage> {
     loadPassages();
   }
 
+  void _showDialog(BuildContext context, String content, Color color) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          content: Center(
+            heightFactor: 1,
+              child: new Text(content,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20.0, color: color))),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text("Close", style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void _nextPage(BuildContext context, int option) {
     int id = this._counter;
     Decision decision = this.list.passages[id].decision.decisions[option];
-    int target_id = decision.targetId-1;
+    int target_id = decision.targetId - 1;
     int new_life = this.leben + decision.leben;
     int new_moral = this.moral + decision.moral;
     int new_diaden = this.diaden + decision.diaden;
 
+    if (new_life != this.leben) {
+      if (new_life < this.leben) {
+        int change = this.leben - new_life;
+        _showDialog(context, "Du hast $change Leben verloren", Colors.red[900]);
+      }else {
+        int change = new_life - this.leben;
+        _showDialog(context, "Du hast $change Leben regeneriert", Colors.green[800]);
+      }
+    }
+    if (new_moral != this.moral) {
+      if (new_moral < this.moral) {
+        int change = this.moral - new_moral;
+        _showDialog(context, "Du hast $change Moral verloren", Colors.red[900]);
+      }else {
+        int change = new_moral - this.moral;
+        _showDialog(context, "Du hast $change Moral gewonnen", Colors.green[800]);
+      }
+    }
+    if (new_diaden != this.diaden) {
+      if (new_diaden < this.diaden) {
+        int change = this.diaden - new_life;
+        _showDialog(context, "Du hast $change Diaden verloren", Colors.red[900]);
+      }else {
+        int change = new_diaden - this.diaden;
+        _showDialog(context, "Du hast $change Diaden regeneriert", Colors.green[800]);
+      }
+    }
+
     _scrollController.jumpTo(0);
 
-    int ovClicks = clicks +1;
-    if(ovClicks == 5){
+    int ovClicks = clicks + 1;
+    if (ovClicks == 5) {
       ShowNotificationIcon test = new ShowNotificationIcon();
       test.show(context);
       ovClicks = 0;
@@ -106,42 +164,33 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter = target_id;
       clicks = ovClicks;
     });
-
-
   }
 
-  Widget buttonView(BuildContext contextOne, DecisionList list){
-
+  Widget buttonView(BuildContext contextOne, DecisionList list) {
     var bView = ListView.builder(
         shrinkWrap: true,
-        itemBuilder: (context, index){
-
+        itemBuilder: (context, index) {
           return Padding(
-          padding: const EdgeInsets.all(10.0),
-          child:
-          RaisedButton(
-            onPressed: () {_nextPage(contextOne, index);},
-            textColor: Colors.white,
-            color: Colors.grey,
-            splashColor: Colors.blueGrey,
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
-              padding: const EdgeInsets.all(5.0),
-
-              child: Text(list.decisions[index].optionText,
-                  style: TextStyle(color: Colors.white, fontSize: 25)),
-            ),
-          )
-          );
+              padding: const EdgeInsets.all(10.0),
+              child: RaisedButton(
+                onPressed: () {
+                  _nextPage(contextOne, index);
+                },
+                textColor: Colors.white,
+                color: Colors.blueGrey,
+                highlightColor: Colors.white,
+                splashColor: Colors.red,
+                padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Text(list.decisions[index].optionText,
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                ),
+              ));
         },
-        itemCount: list.decisions.length
-
-    );
+        itemCount: list.decisions.length);
     return bView;
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -158,6 +207,44 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
+        endDrawer: SizedBox(
+            width: 170.0,
+            child: new Drawer(
+                child: new ListView(
+              children: <Widget>[
+                new ListTile(
+                  title: new Text(
+                    'Einstellungen',
+                    style: TextStyle(fontFamily: 'Arial'),
+                  ),
+                  onTap: () {},
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text(
+                    'Kapitel',
+                    style: TextStyle(fontFamily: 'Arial'),
+                  ),
+                  onTap: () {},
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text(
+                    'Hol Dir Diaden',
+                    style: TextStyle(fontFamily: 'Arial'),
+                  ),
+                  onTap: () {},
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text(
+                    'Kontakt',
+                    style: TextStyle(fontFamily: 'Arial'),
+                  ),
+                  onTap: () {},
+                ),
+              ],
+            ))),
         body: Center(
           child: Column(
             children: <Widget>[
@@ -182,24 +269,24 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               isData
                   ? Expanded(
-                // A flexible child that will grow to fit the viewport but
-                // still be at least as big as necessary to fit its contents.
-                  child: new SingleChildScrollView(
-                    controller: _scrollController,
-                    child: Column(children: <Widget>[
-                      Image.asset('assets/rouges-choice.jpg'),
-                      Text(list.passages[_counter].content,
-                          style: TextStyle(color: Colors.white, fontSize: 20)),
-                      Padding(padding: EdgeInsets.all(20.0)),
-                      buttonView(context, this.list.passages[_counter].decision),
-
-
-                    ]),
-                  ))
+                      // A flexible child that will grow to fit the viewport but
+                      // still be at least as big as necessary to fit its contents.
+                      child: new SingleChildScrollView(
+                      controller: _scrollController,
+                      child: Column(children: <Widget>[
+                        Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: Text(list.passages[_counter].content,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18))),
+                        Padding(padding: EdgeInsets.all(10.0)),
+                        buttonView(
+                            context, this.list.passages[_counter].decision),
+                      ]),
+                    ))
                   : new Center(
-                child: new CircularProgressIndicator(),
-              ),
-
+                      child: new CircularProgressIndicator(),
+                    ),
             ],
           ),
         ));

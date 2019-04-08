@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "content": "Der Marktplatz war voller Menschen. Vor allem vor den Ständen drängelten sich die Leute, um schnellstmöglich dran zu kommen. “Es gibt nichts Besseres als überfüllte Platze”, schießt es dir in den Kopf während du dir ein kleines Grinsen nicht verkneifen kannst, trotz der bedrohlichen Situation. Auch wenn du die meisten Menschen nicht ausstehen kannst und der Geruch von ungeduschten Leuten hier unausstehlich ist, kannst du hier mit Leichtigkeit Waren und Geldbörsen erbeuten oder nach einem misslungenen Versuch fliehen. Letzteres war jetzt von Nöten.",
+    "content": "Der Marktplatz war voller Menschen. Vor allem vor den Ständen drängelten sich die Leute, um schnellstmöglich dran zu kommen. “Es gibt nichts Besseres als überfüllte Platze”, schießt es dir in den Kopf während du dir ein kleines Grinsen nicht verkneifen kannst, trotz der bedrohlichen Situation. Auch wenn du die meisten Menschen nicht ausstehen kannst und der Geruch von ungeduschten Leuten hier unausstehlich ist, kannst du hier mit Leichtigkeit Waren und Geldbörsen erbeuten oder nach einem misslungenen Versuch fliehen. Letzteres war jetzt von Nöten. Normalerweise musst du nur vor gewöhnlichen Bürgern entfliehen was ein Kinderspiel für dich ist. Sie bewegen sich nur auf den Hauptstraßen und wagen es nicht die dunklen und gesetzeslosen Seitengassen zu betreten. Dein Leben auf der Straße oder besser gesagt auf den Dächern der Stadt hat dir auch eine passable Akrobatik und Ausdauer gelernt. Gerade sind dir aber eine Hand voll bewaffneter Wachen auf den Fersen. Diesmal war das Risiko höher, aber das war es dir wert.",
     "decision": [
       {
         "id": 1.1,
@@ -13,40 +13,13 @@
       }
     ]
   },
+
   {
     "id": 2,
-    "content": "Normalerweise musst du nur vor gewöhnlichen Bürgern entfliehen was ein Kinderspiel für dich ist. Sie bewegen sich nur auf den Hauptstraßen und wagen es nicht die dunklen und gesetzeslosen Seitengassen zu betreten. Dein Leben auf der Straße oder besser gesagt auf den Dächern der Stadt hat dir auch eine passable Akrobatik und Ausdauer gelernt. Gerade sind dir aber eine Hand voll bewaffneter Wachen auf den Fersen. Diesmal war das Risiko höher, aber das war es dir wert.",
+    "content": "Es kommt nicht oft vor, dass ein Adliger durch das Armenviertel mit drei gelangweilt wirkenden Wachen schreitet. Deine letzte warme Mahlzeit ist schon Wochen her, somit fiel die Entscheidung und du hast den Hauptgewinn angestrebt. Ein recht großer Beutel hing an seiner Hüfte, aus dem ein Stück Pergament heraus schielte.  An den Mann heran zu kommen war ein leichtes, das Entkommen gestaltet sich aber schwieriger als angenommen. \n \nDie Wachen nahmen sofort die Verfolgung auf. Sie tragen nur leichte Rüstung, dadurch gelang es ihnen mit dir Schritt zu halten. Auch ihre Ausdauer scheint noch nicht nachzulassen. Du musst sie anders abschütteln und dafür müssen jetzt die Geschäfte oder Passanten herhalten. Du begibst dich in die Menschenmenge und kurzzeitig bist du für die Wachen verschwunden. Nun gilt es zu handeln. Du kannst dich in der Masse der Menschen, die sich um die einzelnen Stände bildet, verstecken oder in eins der Geschäfte fliehen, die um den Marktplatz herum erbaut wurden. Um den Ständen rangt sich eher das einfache Volk und feilscht lautstark um den Preis, während in den Geschäften eher ausgelesene Ware gehandelt wird. Dort ist weniger Kundschaft zum Untertauchen, dafür werden die Wachen euch dort eher nicht vermuten.",
     "decision": [
       {
         "id": 2.1,
-        "option_text": "Weiter",
-        "diaden": 0,
-        "moral": 0,
-        "leben": 0,
-        "target_id": 3
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "content": "Es kommt nicht oft vor, dass ein Adliger durch das Armenviertel mit drei gelangweilt wirkenden Wachen schreitet.  Deine letzte warme Mahlzeit ist schon Wochen her, somit fiel die Entscheidung und du hast den Hauptgewinn angestrebt. Ein recht großer Beutel hing an seiner Hüfte, aus dem ein Stück Pergament heraus schielte.  An den Mann heran zu kommen war ein leichtes, das Entkommen gestaltet sich aber schwieriger als angenommen.",
-    "decision": [
-      {
-        "id": 3.1,
-        "option_text": "Weiter",
-        "diaden": 0,
-        "moral": 0,
-        "leben": 0,
-        "target_id": 4
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "content": "Die Wachen nahmen sofort die Verfolgung auf. Sie tragen nur leichte Rüstung, dadurch gelang es ihnen mit dir Schritt zu halten. Auch ihre Ausdauer scheint noch nicht nachzulassen. Du musst sie anders abschütteln und dafür müssen jetzt die Geschäfte oder Passanten herhalten. Du begibst dich in die Menschenmenge und kurzzeitig bist du für die Wachen verschwunden. Nun gilt es zu handeln. Du kannst dich in der Masse der Menschen, die sich um die einzelnen Stände bildet, verstecken oder in eins der Geschäfte fliehen, die um den Marktplatz herum erbaut wurden. Um den Ständen rangt sich eher das einfache Volk und feilscht lautstark um den Preis, während in den Geschäften eher ausgelesene Ware gehandelt wird. Dort ist weniger Kundschaft zum Untertauchen, dafür werden die Wachen euch dort eher nicht vermuten.",
-    "decision": [
-      {
-        "id": 4.1,
         "option_text": "In der Masse untertauchen",
         "diaden": 3,
         "moral": -2,
@@ -54,7 +27,7 @@
         "target_id": 5
       },
       {
-        "id": 4.2,
+        "id": 2.2,
         "option_text": "In ein Geschäft fliehen",
         "diaden": 2,
         "moral": -1,
