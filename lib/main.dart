@@ -4,8 +4,14 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 import 'package:myapp/passage.dart';
 import 'package:myapp/decision.dart';
+import 'package:myapp/screens/chapters.dart';
+import 'package:myapp/screens/contact.dart';
+import 'package:myapp/screens/diaden.dart';
+import 'package:myapp/screens/settings.dart';
 import 'package:myapp/showAd.dart';
 import 'package:myapp/showLife.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,6 +62,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   int _counter = 0;
   int clicks = 0;
   var list;
@@ -64,6 +71,25 @@ class _MyHomePageState extends State<MyHomePage> {
   int diaden = 0;
   int moral = 10;
   ScrollController _scrollController = new ScrollController();
+
+
+  setPassage(int value) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    return prefs.setInt("_savedChapter", value);
+  }
+
+  getPassage() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    print("Saved Chapter: " + prefs.getInt("_savedChapter").toString());
+
+
+    setState(() {
+
+      _counter = prefs.getInt("_savedChapter");
+
+    });
+  }
 
   Future _loadPassageAsset() async {
     return await rootBundle.loadString('assets/content.json');
@@ -83,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     print("Test");
+    getPassage();
     loadPassages();
   }
 
@@ -144,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _showDialog(context, "Du hast $change Diaden verloren", Colors.red[900]);
       }else {
         int change = new_diaden - this.diaden;
-        _showDialog(context, "Du hast $change Diaden regeneriert", Colors.green[800]);
+        _showDialog(context, "Du hast $change Diaden gewonnen", Colors.green[800]);
       }
     }
 
@@ -164,6 +191,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter = target_id;
       clicks = ovClicks;
     });
+
+    setPassage(target_id);
+
   }
 
   Widget buttonView(BuildContext contextOne, DecisionList list) {
@@ -205,6 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
+          leading: Container (),
           title: Text(widget.title),
         ),
         endDrawer: SizedBox(
@@ -217,7 +248,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Einstellungen',
                     style: TextStyle(fontFamily: 'Arial'),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()),
+                    );
+
+
+                  },
                 ),
                 new Divider(),
                 new ListTile(
@@ -225,7 +264,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Kapitel',
                     style: TextStyle(fontFamily: 'Arial'),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Chapters()),
+                    );
+                  },
                 ),
                 new Divider(),
                 new ListTile(
@@ -233,7 +279,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Hol Dir Diaden',
                     style: TextStyle(fontFamily: 'Arial'),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Diaden()),
+                    );
+                  },
                 ),
                 new Divider(),
                 new ListTile(
@@ -241,7 +293,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Kontakt',
                     style: TextStyle(fontFamily: 'Arial'),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Contact()),
+                    );
+                  },
                 ),
               ],
             ))),
